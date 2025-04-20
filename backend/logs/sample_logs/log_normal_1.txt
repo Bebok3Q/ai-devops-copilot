@@ -1,0 +1,3 @@
+[INFO] Server started
+[INFO] All health checks passed
+[INFO] User login successful

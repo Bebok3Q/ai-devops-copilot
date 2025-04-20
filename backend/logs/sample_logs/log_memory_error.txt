@@ -1,0 +1,8 @@
+[INFO] Starting app
+[INFO] Connecting to database
+[WARNING] Slow response time
+[ERROR] Timeout occurred
+[ERROR] Timeout occurred
+[ERROR] Timeout occurred
+[ERROR] Timeout occurred
+[CRITICAL] Out of memory

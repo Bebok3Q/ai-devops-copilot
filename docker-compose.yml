@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ai-copilot-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./dashboard/tailwindcss4
+      dockerfile: Dockerfile
+    container_name: ai-copilot-frontend
+    ports:
+      # container serves on 80 (nginx), map to host 3000
+      - "3000:80"
+
+  db:
+    image: postgres:15
+    container_name: ai-copilot-db
+    environment:
+      POSTGRES_DB: copilot
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
